@@ -30,9 +30,6 @@
 -
 
 ## 참고
-- [commit message 작성 규칙](https://meetup.toast.com/posts/106)
-- [commit naming](https://blog.ull.im/engineering/2019/03/10/logs-on-git.html)
-- [unittest](https://docs.python.org/ko/3/library/unittest.html)
 
 ## 제작자
 [ldy9037@naver.com](https://harmonious-lan-9d2.notion.site/09aaf17cc98e462284bb47a1324d73f2)
