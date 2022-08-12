@@ -1,9 +1,11 @@
-class Trie:
-    pass
-    
-
 class Node:
-    def __init__(self, key, next, length):
+    def __init__(self, key):
         self.key = key
-        self.next = next
+        self.next = {}
         self.length = []
+
+    def next(self, key):
+        if key in self.next: 
+            return self.next[key]
+
+        return None
