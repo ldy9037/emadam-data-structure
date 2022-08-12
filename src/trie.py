@@ -1,3 +1,7 @@
+class Trie:
+    def __init__(self):
+        self.head = Node("")
+
 class Node:
     def __init__(self, key):
         self.key = key
@@ -9,3 +13,5 @@ class Node:
             return self.next[key]
 
         return None
+    
+    
