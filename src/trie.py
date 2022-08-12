@@ -2,6 +2,21 @@ class Trie:
     def __init__(self):
         self.head = Node("")
 
+    def save(self, string):
+        length = len(string)
+        current = self.head
+
+        current.length.append(length)
+
+        for c in string: 
+            next = current.next(c)
+            if next == None:
+                next = Node(c)
+                current.next[c] = next
+            
+            next.length.append(length)
+            current = next
+
 class Node:
     def __init__(self, key):
         self.key = key
