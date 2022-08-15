@@ -9,10 +9,10 @@ class Trie:
         current.getLength().append(length)
 
         for c in string: 
-            next = current.next(c)
+            next = current.nextNode(c)
             if next == None:
                 next = Node(c)
-                current.next[c] = next
+                current.getNext()[c] = next
             
             next.getLength().append(length)
             current = next
@@ -23,16 +23,19 @@ class Node:
         self.next = {}
         self.length = []
 
-    def next(self, key):
+    def nextNode(self, key):
         if key in self.next: 
             return self.next[key]
 
         return None
-    
+
     def getLength(self):
         return self.length
 
     def getKey(self):
         return self.key
+
+    def getNext(self):
+        return self.next        
 
     
