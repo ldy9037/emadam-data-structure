@@ -32,4 +32,7 @@ class Node:
     def getLength(self):
         return self.length
 
+    def getKey(self):
+        return self.key
+
     
