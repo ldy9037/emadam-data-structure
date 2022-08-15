@@ -6,7 +6,7 @@ class Trie:
         length = len(string)
         current = self.head
 
-        current.getLength.append(length)
+        current.getLength().append(length)
 
         for c in string: 
             next = current.next(c)
@@ -14,7 +14,7 @@ class Trie:
                 next = Node(c)
                 current.next[c] = next
             
-            next.getLength.append(length)
+            next.getLength().append(length)
             current = next
 
 class Node:
