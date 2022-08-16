@@ -16,6 +16,14 @@ class Trie:
             
             next.getLength().append(length)
             current = next
+        
+    def find(self, string):
+        current = self.head
+        for c in string:
+            if current == None: break
+            current = current.nextNode(c)
+            
+        return current
 
 class Node:
     def __init__(self, key):
