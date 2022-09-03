@@ -13,12 +13,12 @@ class TrieTests(unittest.TestCase):
         trie.save(string)
         
         node = trie.head
-        self.assertEqual(node.getKey(), "")
+        self.assertEqual(node.key(), "")
         
         for char in string:
             node = node.nextNode(char)
-            self.assertEqual(node.getKey(), char)
-            self.assertEqual(node.getLength(), [6])
+            self.assertEqual(node.key, char)
+            self.assertEqual(node.length, [6])
         
         string = "eme"
         trie.save(string)
@@ -27,10 +27,10 @@ class TrieTests(unittest.TestCase):
 
         for index, char in enumerate(string):
             node = node.nextNode(char)
-            self.assertEqual(node.getKey(), char)
+            self.assertEqual(node.key(), char)
             
-            if index >= 2: self.assertEqual(node.getLength(), [3])
-            else: self.assertEqual(node.getLength(), [6,3])
+            if index >= 2: self.assertEqual(node.length, [3])
+            else: self.assertEqual(node.length, [6,3])
     
     def test_save(self):
         trie = Trie()
@@ -42,9 +42,9 @@ class TrieTests(unittest.TestCase):
         trie.save(string)
         
         find_node = trie.find("emadam")
-        self.assertEqual(find_node.getLength(), [6])
-        self.assertEqual(find_node.getKey(), "m")
-        self.assertEqual(find_node.getNext(), {})
+        self.assertEqual(find_node.length, [6])
+        self.assertEqual(find_node.key, "m")
+        self.assertEqual(find_node.next, {})
 
         find_node = trie.find("emadw")
         self.assertIsNone(find_node)
