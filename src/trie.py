@@ -2,19 +2,19 @@ class Trie:
     def __init__(self):
         self.head = Node("")
 
-    def save(self, string):
-        length = len(string)
-        current = self.head
+    def save(self, string: str):
+        length: int = len(string)
+        current: Node = self.head
 
-        current.getLength().append(length)
+        current.length.append(length)
 
         for c in string: 
             next = current.nextNode(c)
             if next == None:
                 next = Node(c)
-                current.getNext()[c] = next
+                current.next[c] = next
             
-            next.getLength().append(length)
+            next.length.append(length)
             current = next
         
     def find(self, string):
@@ -35,15 +35,6 @@ class Node:
         if key in self.next: 
             return self.next[key]
 
-        return None
-
-    def getLength(self):
-        return self.length
-
-    def getKey(self):
-        return self.key
-
-    def getNext(self):
-        return self.next        
+        return None        
 
     
